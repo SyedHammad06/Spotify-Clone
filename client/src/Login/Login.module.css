@@ -1,0 +1,122 @@
+.Login {
+  width: 100%;
+  height: 100%;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.Login hr {
+  border: 0.5px solid rgb(170, 170, 170);
+}
+
+.Midsection {
+  width: 50%;
+  margin: 1rem auto;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Top {
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Top h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-left: 1.5rem;
+}
+
+.ButtonGroup button {
+  width: 40rem;
+  padding: 1rem 4rem;
+  margin: 1rem 0;
+  display: block;
+  background: none;
+  border: none;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rem;
+  font-size: 1.5rem;
+}
+
+.ButtonGroup p {
+  font-weight: 600;
+  margin-left: 1.5rem;
+}
+
+.SubHeading {
+  margin-top: 2rem;
+}
+
+.SubHeading2 {
+  margin: 0.5rem 0 1rem 0;
+}
+
+.Form input {
+  display: block;
+  width: 40rem;
+  padding: 0.6rem 1rem;
+}
+
+.Form label {
+  display: block;
+  text-align: left;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.Lower {
+  display: block;
+  margin: 2rem 0;
+}
+
+.Lower a {
+  color: black;
+  display: block;
+  text-align: left;
+}
+
+.Lower button {
+  display: block;
+  margin: 1.6rem auto;
+  background: none;
+  padding: 1.5rem 4rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #1db954;
+  color: white;
+  border-radius: 5rem;
+  border: none;
+}
+
+.Bottom h2 {
+  margin-top: 3rem;
+}
+
+.Bottom button {
+  width: 40rem;
+  padding: 1rem 4rem;
+  margin: 1.5rem auto;
+  display: block;
+  background: none;
+  border: 1px solid black;
+  border-radius: 5rem;
+  font-size: 1.5rem;
+}
+
+.Bottom a {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+}
