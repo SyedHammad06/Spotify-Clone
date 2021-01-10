@@ -41,6 +41,7 @@ const login = () => {
             type='text'
             id='email'
             placeholder='Enter your email address or username'
+            autoFocus
           />
           <label htmlFor='password'>Password</label>
           <input
