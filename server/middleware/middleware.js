@@ -16,6 +16,9 @@ exports.getLogin=(req, res)=>{
     })
 }
 
+const client_id = '9e2edbc49fcb49f78cce20df400672ca'; // Your client id
+const client_secret = '7ddc179f4f974e22a0953745b3ce9519'; // Your secret
+
 exports.postLogin=(req, res)=>{
     const email=req.body.email
     const password=req.body.password
