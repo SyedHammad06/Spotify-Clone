@@ -25,7 +25,9 @@ const App = () => {
   return (
     <div className='App'>
       <SideDrawer playlist={playlistArr} />
-      <NavLink to='/login'>Login</NavLink>
+      <NavLink to='/login' style={{ color: 'white' }}>
+        Login
+      </NavLink>
     </div>
   );
 };

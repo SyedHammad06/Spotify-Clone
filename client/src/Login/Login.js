@@ -1,9 +1,11 @@
 import classes from './Login.module.css';
+import Input from '../UI/InputField/Input';
 import { FaSpotify, FaApple, FaFacebook } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { NavLink } from 'react-router-dom';
 
-const login = () => {
+const login = (props) => {
+  console.log(props);
   return (
     <div className={classes.Login}>
       <div className={classes.Top}>
@@ -15,7 +17,11 @@ const login = () => {
         <p className={classes.SubHeading}>To continue, log in with Spotify</p>
         <div className={classes.ButtonGroup}>
           <button
-            style={{ border: 'none', backgroundColor: 'blue', color: 'white' }}
+            style={{
+              border: 'none',
+              backgroundColor: '#264a99',
+              color: 'white',
+            }}
           >
             <FaFacebook size={30} />
             <p>Continue With Facebook</p>
@@ -36,17 +42,17 @@ const login = () => {
         </div>
         <p className={classes.SubHeading2}>Or</p>
         <form action='/' className={classes.Form}>
-          <label htmlFor='email'>Email address or username</label>
-          <input
-            type='text'
+          <Input
             id='email'
+            type='text'
+            label='Email address or username'
             placeholder='Enter your email address or username'
-            autoFocus
+            focus
           />
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
+          <Input
             id='password'
+            type='password'
+            label='Password'
             placeholder='Enter your password'
           />
           <div className={classes.Lower}>
@@ -58,9 +64,9 @@ const login = () => {
       <hr style={{ width: '41.5rem', margin: '0 auto' }} />
       <div className={classes.Bottom}>
         <h2>Don't have an account?</h2>
-        <button>
-          <NavLink to='/'>Sign Up For Spotify</NavLink>
-        </button>
+        <NavLink className={classes.Btn} to='/signup'>
+          Sign Up For Spotify
+        </NavLink>
       </div>
     </div>
   );
