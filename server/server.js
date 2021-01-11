@@ -18,7 +18,7 @@ const routes=require('./routes/routes')
 
 //get spotify token
 const getToken=async ()=>{
-    
+    const result=await fetch
 }
 
 
