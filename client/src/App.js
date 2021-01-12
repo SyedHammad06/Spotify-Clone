@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-
+import Player from './Player/Player';
 import './App.css';
 import SideDrawer from './SideDrawer/SideDrawer';
 
@@ -25,9 +24,7 @@ const App = () => {
   return (
     <div className='App'>
       <SideDrawer playlist={playlistArr} />
-      <NavLink to='/login' style={{ color: 'white' }}>
-        Login
-      </NavLink>
+      <Player />
     </div>
   );
 };

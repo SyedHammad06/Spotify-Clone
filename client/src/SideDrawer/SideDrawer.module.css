@@ -3,13 +3,14 @@
 
 .SideDrawer {
   width: 20rem;
-  height: 92vh;
+  height: 90vh;
   overflow-y: scroll;
   color: white;
   padding: 2.5rem 0 0 2.5rem;
   font-size: 1.4rem;
   background-color: #191414;
   scrollbar-width: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .SideDrawer::-webkit-scrollbar {

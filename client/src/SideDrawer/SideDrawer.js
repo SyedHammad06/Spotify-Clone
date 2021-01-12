@@ -1,6 +1,7 @@
 import { AiFillHome } from 'react-icons/ai';
 import { ImDrawer, ImFeed } from 'react-icons/im';
 import List from '../UI/ListItem/List';
+import { NavLink } from 'react-router-dom';
 import classes from './SideDrawer.module.css';
 
 const sideDrawer = (props) => {
@@ -48,6 +49,9 @@ const sideDrawer = (props) => {
           <List key={listItem} title={listItem} to='/' />
         ))}
       </ul>
+      <NavLink to='/login' style={{ color: 'white' }}>
+        Login
+      </NavLink>
     </div>
   );
 };
