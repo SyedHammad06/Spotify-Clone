@@ -5,7 +5,6 @@ import { FcGoogle } from 'react-icons/fc';
 import { NavLink } from 'react-router-dom';
 
 const login = (props) => {
-  console.log(props);
   return (
     <div className={classes.Login}>
       <div className={classes.Top}>

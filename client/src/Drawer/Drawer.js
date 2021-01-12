@@ -2,9 +2,9 @@ import { AiFillHome } from 'react-icons/ai';
 import { ImDrawer, ImFeed } from 'react-icons/im';
 import List from '../UI/ListItem/List';
 import { NavLink } from 'react-router-dom';
-import classes from './SideDrawer.module.css';
+import classes from './Drawer.module.css';
 
-const sideDrawer = (props) => {
+const Drawer = (props) => {
   const content = (
     <ul className={classes.BottomList}>
       {props.playlist.map((listItem) => (
@@ -14,7 +14,7 @@ const sideDrawer = (props) => {
   );
 
   return (
-    <div className={classes.SideDrawer}>
+    <div className={classes.Drawer}>
       <nav className={classes.TopNav}>
         <ul className={classes.TopList}>
           <li className={classes.Active}>
@@ -25,7 +25,7 @@ const sideDrawer = (props) => {
             <ImDrawer size={28} />
             <a href='/'>Browse</a>
           </li>
-          <li style={{ marginTop: 12 }}>
+          <li style={{ marginTop: 20 }}>
             <ImFeed size={28} />
             <a href='/'>Radio</a>
           </li>
@@ -49,4 +49,4 @@ const sideDrawer = (props) => {
   );
 };
 
-export default sideDrawer;
+export default Drawer;

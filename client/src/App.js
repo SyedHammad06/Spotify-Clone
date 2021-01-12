@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import SideDrawer from './SideDrawer/SideDrawer';
+import Drawer from './Drawer/Drawer';
 import Search from './Search bar/Search';
 import Player from './Player/Player';
 import './App.css';
@@ -25,7 +25,7 @@ const App = () => {
   return (
     <div className='App'>
       <Search />
-      <SideDrawer playlist={playlistArr} />
+      <Drawer playlist={playlistArr} />
       <Player />
     </div>
   );

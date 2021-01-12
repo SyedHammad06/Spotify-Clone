@@ -1,11 +1,13 @@
 .Player {
   width: 100%;
-  height: 10vh;
+  height: 8rem;
   display: flex;
   padding: 0 2rem;
   justify-content: space-between;
   align-items: center;
   background-color: #363636;
+  position: fixed;
+  bottom: 0;
 }
 
 .Player svg {
@@ -27,13 +29,17 @@
 }
 
 .Icons svg {
-  margin-left: 2rem;
+  margin-left: 3rem;
 }
 
 .Process {
   height: 0.25rem;
   width: 50rem;
   margin-top: 1.5rem;
+}
+
+.End {
+  margin-top: 1rem;
 }
 
 .End svg {
@@ -43,4 +49,70 @@
 .End input {
   width: 8rem;
   margin-right: 1rem;
+}
+
+@media (max-width: 960px) {
+  .Mid {
+    width: 40rem;
+  }
+  .Process {
+    width: 40rem;
+  }
+  .End input {
+    width: 6rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .Mid {
+    width: 30rem;
+  }
+  .Process {
+    width: 30rem;
+  }
+  .End svg {
+    margin-right: 0.5rem;
+  }
+  .End input {
+    width: 5rem;
+  }
+  .Icons {
+    text-align: center;
+    margin-left: -3.1rem;
+  }
+  .Icons svg {
+    margin-left: 1.5rem;
+  }
+  .Svg1 {
+    width: 2rem;
+    height: 2rem;
+  }
+  .Svg2 {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  .Svg3 {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .Mid {
+    width: 40rem;
+  }
+  .Process {
+    width: 40rem;
+    margin-bottom: 1.2rem;
+  }
+  .Icons {
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .Image {
+    display: none;
+  }
+  .End {
+    display: none;
+  }
 }
