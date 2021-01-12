@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
+import SideDrawer from './SideDrawer/SideDrawer';
+import Search from './Search bar/Search';
 import Player from './Player/Player';
 import './App.css';
-import SideDrawer from './SideDrawer/SideDrawer';
 
 const App = () => {
   const [apiText, setApiText] = useState('');
@@ -23,6 +24,7 @@ const App = () => {
 
   return (
     <div className='App'>
+      <Search />
       <SideDrawer playlist={playlistArr} />
       <Player />
     </div>
