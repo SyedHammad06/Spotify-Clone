@@ -7,6 +7,7 @@ exports.getUsers=(req, res)=>{
     .then(result=>{
         console.log(result);
         res.json(result)
+        console.log(result.length+' users signed in');
     })
     .catch(err=>console.log(err));
 }
@@ -29,4 +30,15 @@ exports.PostUsers=async (req, res)=>{
         res.status(500).send(err)
         console.log(err+'err');
     }
+}
+
+exports.findById=(req, res, next)=>{
+    SignUp.findById(req.params.id)
+    .then(user=>{
+        console.log('working');
+        if(user==null)return res.json({message:"cant find user"})
+        res.user=user;
+        next();
+    })
+    .catch(err=>console.log(err));
 }

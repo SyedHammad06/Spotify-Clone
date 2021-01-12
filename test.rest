@@ -14,3 +14,22 @@ Content-Type: application/json
     "day":12,
     "gender":"Male"
 }
+
+###
+
+GET http://localhost:8080/api/5ffd4a7e437df51ba86c86b4
+
+###
+
+PATCH http://localhost:8080/api/5ffd4b05cc73a30cb8d9b0e8
+Content-Type: application/json
+
+{
+    "name": "emily",
+    "email":"emily@gmail.com",
+    "password":"emily123"
+}
+
+###
+
+DELETE http://localhost:8080/api/5ffdaa26657ef41fbc7974b9
