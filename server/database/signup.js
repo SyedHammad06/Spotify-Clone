@@ -1,30 +1,38 @@
-const mongoose=require('mongoose')
-const bcrypt=require('bcrypt')
-const Schema=mongoose.Schema({
-    name:{
-        type:String,
-        required:true
+const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
+
+const Schema = mongoose.Schema({
+    name: {
+        type: String,
+        required: true
     },
-    email:{
-        type:String,
-        required:true
+    email: {
+        type: String,
+        required: true
     },
-    password:{
-        type:String,
-        required:true
+    password: {
+        type: String,
+        required: true
     },
-    DOB:{
-        year:{type:String},
-        month:{type:String},
-        day:{type:String}
+    year: {
+        type: Number
     },
-    gender:{
-        type:String,
-        required:true
+    month: {
+        type: String
     },
-    signIn_date:{
-        type:Date,
+    day: {
+        type: Number
+    },
+    gender: {
+        type: String,
+        required: true
+    },
+    signIn_date: {
+        type: Date,
         default:Date.now()
     }
 })
-module.exports=mongoose.model('SignUp', Schema)
+
+
+
+module.exports = mongoose.model('SignUp', Schema)

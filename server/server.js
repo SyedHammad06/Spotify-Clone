@@ -28,13 +28,10 @@ db.on('open', ()=>{console.log('connected to database')})
 //sessions
 
 app.use(session({
-    name:'session',
     secret:'gludius maximus',
     expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
     store:store
 }))
-
-app.use(csurf())
 
 //connecting to react ui
 app.use(cors())//cors helps in connecting multiple ports
