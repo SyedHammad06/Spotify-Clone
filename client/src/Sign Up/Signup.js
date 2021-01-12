@@ -67,11 +67,11 @@ const signUp = () => {
             />
           </div>
           <div>
-            <label htmlFor='date'>Date</label>
+            <label htmlFor='date'>Day</label>
             <input
               type='text'
               id='date'
-              placeholder='YYYY'
+              placeholder='DD'
               style={{ width: '7rem' }}
             />
           </div>
