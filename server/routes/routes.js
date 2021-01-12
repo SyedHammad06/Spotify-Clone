@@ -1,8 +1,10 @@
 const express=require('express')
 const router=express.Router()
 
-router.get('/', (req, res)=>{
-    res.send('api connected');
-})
+const Users=require('../middleware/middleware')
+
+router.get('/', Users.getUsers);
+
+router.post('/signup', Users.PostUsers)
 
 module.exports=router

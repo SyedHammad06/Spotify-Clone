@@ -34,8 +34,6 @@ app.use(session({
     store:store
 }))
 
-app.use(csurf())
-
 //connecting to react ui
 app.use(cors())//cors helps in connecting multiple ports
 
