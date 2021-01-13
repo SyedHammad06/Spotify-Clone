@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Drawer from './Drawer/Drawer';
 import Search from './Search bar/Search';
+import superagent from 'superagent';
 import Player from './Player/Player';
 import './App.css';
 
@@ -26,6 +27,16 @@ const App = () => {
     <div className='App'>
       <Search />
       <Drawer playlist={playlistArr} />
+    <a
+        href=''
+        className="app-link"
+        onCliCk={()=>
+          superagent.get('http://localhost:8080/')
+          .then(res=>{console.log(res)})
+          .withCredentials()
+          .catch(err=>console.log(err))
+        }
+      >Get Cookie</a>
       <Player />
     </div>
   );

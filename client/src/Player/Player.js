@@ -46,7 +46,7 @@ const Player = (props) => {
         <input
           type='range'
           value={val}
-          step='10'
+          step='1'
           onChange={(e) => setVal(e.target.value)}
         />
         <FaExpandAlt size={17} />

@@ -12,6 +12,10 @@ exports.getUsers=(req, res)=>{
     .catch(err=>console.log(err));
 }
 
+exports.postLogin=(req, res)=>{
+    
+}
+
 exports.PostUsers=async (req, res)=>{
     try{
         const hashedPassword=await bcrypt.hash(req.body.password, 10);
