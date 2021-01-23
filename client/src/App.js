@@ -1,23 +1,13 @@
 import { useState, useEffect } from 'react';
 import Drawer from './Drawer/Drawer';
 import Search from './Search bar/Search';
-import superagent from 'superagent';
 import Player from './Player/Player';
 import './App.css';
 
 const App = () => {
   const [apiText, setApiText] = useState('');
 
-  const apiReq = () => {
-    fetch('http://localhost:8080/api')
-      .then((res) => res.text())
-      .then((res) => setApiText(res))
-      .catch((err) => console.log(err));
-  };
 
-  useEffect(() => {
-    apiReq();
-  }, []);
 
   const playlistArr = ['Coding Focus', 'Justin Beiber', 'Lady Gaga'];
 
@@ -28,10 +18,16 @@ const App = () => {
       <Search />
       <Drawer playlist={playlistArr} />
     <a
-        href=''
+        href='http://localhost:3000/'
         className="app-link"
-        onCliCk={()=>
-          superagent.get('http://localhost:8080/')
+        onClick={()=>
+          fetch('http://localhost:8080/cookie',{
+            method:"GET",
+            headers: {
+              "access-control-allow-origin" : "*",
+              "Content-type": "application/json; charset=UTF-8"
+            }
+          })
           .then(res=>{console.log(res)})
           .withCredentials()
           .catch(err=>console.log(err))

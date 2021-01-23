@@ -25,46 +25,9 @@ mongoose.connect(mongoUri, {useNewUrlParser:true})
 const db=mongoose.connection;
 db.on('err', err=>console.log(err))
 db.on('open', ()=>{console.log('connected to database')})
-//sessions
 
-app.use(session({
-    secret:'gludius maximus',
-    expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
-    store:store,
-    resave:true,
-    cookie:{
-        httpOnly:true,
-        secure:true,
-    }
-}))
-
-//custom cors config
-const corsOptions={
-    origin:'http://localhost:3000/',
-    methods: "GET,HEAD,POST,PATCH,DELETE,OPTIONS",
-    credentials:true,
-    allowedHeaders: "Content-Type, Authorization, X-Requested-With",
-}
-
-//currently it's a test middleware which i will delete later
-app.get('/cookie', cors(corsOptions) ,(req, res)=>{
-    const option={
-        secure:true,
-        httpOnly:false,
-        domain:'http://localhost:3000/'
-    }
-
-    return res
-        .cookie('cookieName', 'cookieValue', option)
-        .status(200)
-        .send('cookie sent')
-})
-
-//connecting to react ui
-app.use(cors(corsOptions))//cors helps in connecting multiple ports
-
-app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))//returns urlencoded middleware, and checks for content-type rest-api requests
+app.use(bodyParser.json())
 app.use('/api', routes);
 
 app.listen(port, ()=>{

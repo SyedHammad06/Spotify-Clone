@@ -4,7 +4,7 @@ const router=express.Router()
 
 const Users=require('../middleware/middleware')
 
-router.get('/', Users.getUsers);
+router.get('/cat', Users.getUsers);
 
 router.post('/signup', Users.PostUsers);
 
@@ -24,7 +24,6 @@ router.patch('/:id', Users.findById, async (req, res)=>{
         hashedPassword=req.body.password
     }
     try{
-        const hashedPassword=await bcrypt.hash(req.body.password, 10)
         const user=await res.user.save()
         res.json(user)
     }catch(err){
@@ -41,4 +40,7 @@ router.delete('/:id', Users.findById, (req, res)=>{
     .catch(err=>console.log(err));
 })
 
-module.exports=router
+router.post('/login', Users.getLogin)
+
+
+module.exports=router;
