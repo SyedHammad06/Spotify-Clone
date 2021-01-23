@@ -49,10 +49,11 @@ exports.findById=(req, res, next)=>{
 }
 
 exports.getLogin=async(req, res)=>{
+    /* res.setHeader("Content-Type", "text/html"); */
     try{
         await SignUp.findOne({email:req.body.email}).exec((err, user)=>{
             if(err){res.status(500).send({message:err})}
-            if(!err){res.status(404).send({message:'user not found'})}
+            if(!user){res.status(404).send({message:'user not found'})}
             const passwordIsValid=bcrypt.compareSync(req.body.password, user.password)
             if(!passwordIsValid){
                 res.status(401).send({

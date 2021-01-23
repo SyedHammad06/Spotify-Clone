@@ -39,12 +39,12 @@ DELETE http://localhost:8080/api/5ffdaa26657ef41fbc7974b9
 
 ###this endpoint is currently in building process and not completed yet..........
 
-POST http://localhost:8080/api/login
+post http://localhost:8080/api/login
 Content-Type: application/json
 
 {
-    "email":"emily@gmail.com",
-    "password":"emily123"
+    "email":"test@gmail.com",
+    "password":"test123"
 }
 
 

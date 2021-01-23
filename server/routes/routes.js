@@ -4,7 +4,7 @@ const router=express.Router()
 
 const Users=require('../middleware/middleware')
 
-router.get('/cat', Users.getUsers);
+router.get('/', Users.getUsers);
 
 router.post('/signup', Users.PostUsers);
 
