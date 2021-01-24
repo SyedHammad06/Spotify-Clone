@@ -49,18 +49,19 @@ exports.findById=(req, res, next)=>{
 }
 
 exports.getLogin=async(req, res)=>{
-    /* res.setHeader("Content-Type", "text/html"); */
+    res.setHeader("Content-Type", "text/html");
     try{
         await SignUp.findOne({email:req.body.email}).exec((err, user)=>{
             if(err){res.status(500).send({message:err})}
-            if(!user){res.status(404).send({message:'user not found'})}
             const passwordIsValid=bcrypt.compareSync(req.body.password, user.password)
             if(!passwordIsValid){
-                res.status(401).send({
+                res.send({
                     accessToken:null,
                     message:"Invalid Password"
                 })
+                return;
             }
+            if(!user){res.status(404).send({message:'user not found'})}
             const token=jwt.sign({id:user.id}, 'gludius-maxiums', {expiresIn:'1h'})//gludius-maximus is a, secret-refer documentation of jwt
             res.status(200).send({
                 name:user.name,
@@ -73,3 +74,18 @@ exports.getLogin=async(req, res)=>{
         res.send(err)
     }
 }
+
+exports.verifyToken = (req, res, next) => {
+    const authHeader=req.headers['authorization']
+    const token=authHeader && authHeader.split(' ')[1];
+    if (!token) {
+    return res.status(403).send({ message: "No token provided!" });
+    }
+    jwt.verify(token, config.secret, (err, decoded) => {
+    if (err) {
+        return res.status(401).send({ message: "Unauthorized!" });
+    }
+    req.userId = decoded.id;
+    next();
+    });
+};//using later

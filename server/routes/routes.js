@@ -40,7 +40,7 @@ router.delete('/:id', Users.findById, (req, res)=>{
     .catch(err=>console.log(err));
 })
 
-router.post('/login', Users.getLogin)
+router.post('/login' ,Users.getLogin)
 
 
 module.exports=router;

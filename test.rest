@@ -9,9 +9,9 @@ POST http://localhost:8080/api/signup
 Content-Type: application/json
 
 {
-    "name": "test12312312",
-    "email":"test@gmail.com",
-    "password":"test123",
+    "name": "mark",
+    "email":"mark@gmail.com",
+    "password":"123",
     "year":2006,
     "month":"OCT",
     "day":12,
@@ -43,8 +43,9 @@ post http://localhost:8080/api/login
 Content-Type: application/json
 
 {
-    "email":"test@gmail.com",
-    "password":"test123"
+    "email":"abraham@gmail.com",
+    "password":"america"
 }
+
 
 
