@@ -13,26 +13,17 @@ const App = () => {
 
   console.log(apiText);
 
+  callAPI(){
+    fetch("http://localhost:8080/api")
+    .then(res=>{console.log(res)})
+    .catch(err=>{console.log(err)})
+  }
+
   return (
     <div className='App'>
       <Search />
       <Drawer playlist={playlistArr} />
-    <a
-        href='http://localhost:3000/'
-        className="app-link"
-        onClick={()=>
-          fetch('http://localhost:8080/cookie',{
-            method:"GET",
-            headers: {
-              "access-control-allow-origin" : "*",
-              "Content-type": "application/json; charset=UTF-8"
-            }
-          })
-          .then(res=>{console.log(res)})
-          .withCredentials()
-          .catch(err=>console.log(err))
-        }
-      >Get Cookie</a>
+      <button onCLick="" >get</button>
       <Player />
     </div>
   );
