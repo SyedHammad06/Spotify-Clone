@@ -1,5 +1,4 @@
 import React from 'react';
-import {CookiesProvider} from 'react-cookie'
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -8,13 +7,11 @@ import Login from './Login/Login';
 import SignUp from './Sign Up/Signup';
 
 const ren = (
-  <CookiesProvider>
-    <Router>
-      <Route path='/' exact component={App} />
-      <Route path='/login' component={Login} />
-      <Route path='/signup' component={SignUp} />
-    </Router>
-  </CookiesProvider>
+  <Router>
+    <Route path='/' exact component={App} />
+    <Route path='/login' component={Login} />
+    <Route path='/signup' component={SignUp} />
+  </Router>
 );
 
 ReactDOM.render(ren, document.getElementById('root'));
